@@ -2,6 +2,7 @@ package main
 
 import (
 	"github.com/gin-gonic/gin"
+	"go-skeleton/app/utils"
 )
 
 func main() {
@@ -9,5 +10,5 @@ func main() {
 	router.GET("/status", func(c *gin.Context) {
 		c.String(200, "OK")
 	})
-	router.Run(":9000")
+	router.Run(":" + utils.GetPort())
 }
